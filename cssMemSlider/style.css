@@ -20,10 +20,19 @@ body {
   background-repeat: no-repeat;
   background-size: cover; */
 }
+.mem {
+  display: flex;
+  position: relative;
+  /* width: 76vw * 2; */
+  width: 100%;
+  /* height: 500px; */
+  overflow: hidden;
+  left: 0;
+  z-index: 1;
+}
 .slider-item {
   position: absolute;
   opacity: 0;
-  -webkit-transition: opacity 0.6s ease-out;
   transition: opacity 0.6s ease-out;
   z-index: 1;
 }
@@ -31,29 +40,45 @@ body {
   position: static;
   opacity: 100;
 }
-#input-1:checked ~ .flexbox .tex_for_bean {
+#input-1:checked ~ .flexbox .tex_for_input-1 {
   position: static;
   opacity: 100;
 }
-#input-2:checked ~ .flexbox .tex_for_bean_second {
+#input-2:checked ~ .flexbox .tex_for_input-2 {
   position: static;
   opacity: 100;
 }
-.mem {
-  display: flex;
-  position: relative;
-  /* width: 76vw * 2; */
-  width: 500px;
-  height: 500px;
-  /* overflow: hidden; */
-  left: 0;
-  z-index: 1;
+#input-3:checked ~ .flexbox .tex_for_input-3 {
+  position: static;
+  opacity: 100;
 }
+#input-4:checked ~ .flexbox .tex_for_input-4{
+  position: static;
+  opacity: 100;
+}
+
+#input-1:checked ~ .flexbox .circle1 {
+  color: rgb(63, 13, 202);
+  background-color: grey;
+}
+#input-2:checked ~ .flexbox .circle2 {
+  color: rgb(63, 13, 202);
+  background-color: grey;
+}
+#input-3:checked ~ .flexbox .circle3 {
+  color: rgb(63, 13, 202);
+  background-color: grey;
+}
+#input-4:checked ~ .flexbox .circle4 {
+  color: rgb(63, 13, 202);
+  background-color: grey;
+}
+
 .mem_pic {
-  /* height: 80%;
-  width: 76vw; */
-  width: 500px;
-  height: 500px;
+  height: calc(76vw * 9 / 16);
+  width: 76vw;
+  /* width: 500px; */
+  /* height: 500px; */
   border-radius: .75em;
   object-fit: cover;
   z-index: 1;
@@ -63,10 +88,15 @@ body {
 .circle {
   height: 1em;
   width: 1em;
+  border: solid .2em;
   border-radius: 50%;
-  color: aqua;
-  background-color: aqua;
+  color: rgb(63, 13, 202);
+  background-color: rgb(63, 13, 202);
   z-index: 10;
+}
+.bullet:hover .circle {
+  color: white;
+  background-color: white;
 }
 /* .flexbox {
   display: flex;
@@ -77,8 +107,10 @@ body {
 .flexbox {
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 900px;
+  height: calc(100vh - 76vw * 9 / 16);
+  /* left: 0; */
+  left: calc(100vw / 2 - 76vw / 2);
+  width: 76vw;
   display: flex;
   justify-content: space-between;
   align-items: bottoms;
@@ -87,6 +119,7 @@ body {
 .bottoms {
   display: flex;
   width: 8%;
+  height: 2em;
   justify-content: space-between;
 }
 .text {
