@@ -1,0 +1,54 @@
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: grey;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+.wrapper {
+  margin: 0;
+  padding-top: 1%;
+  padding-bottom: 0;
+  height: 100%;
+  width: auto;
+  /* background-image: url('mister\ bean.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+.mem {
+  width: 100%;
+}
+.mem_pic {
+  height: 90%;
+  border-radius: .75em;
+  
+}
+.circle {
+  height: .75em;
+  width: .75em;
+  border-radius: 50%;
+  color: aqua;
+  background-color: aqua;
+}
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: bottoms;
+  padding-top: 2%;
+}
+.bottoms {
+  display: flex;
+  width: 5%;
+  justify-content: space-between;
+}
+.text {
+  margin: 0;
+  font-size: 2em;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }}
