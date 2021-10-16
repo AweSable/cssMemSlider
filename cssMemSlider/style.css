@@ -4,7 +4,7 @@ html {
 body {
   margin: 0;
   height: 100vh;
-  background-color: grey;
+  background-color: rgb(19, 22, 16);
 }
 *, *::before, *::after {
   box-sizing: inherit;
@@ -36,6 +36,10 @@ body {
   transition: opacity 0.6s ease-out;
   z-index: 1;
 }
+.picture_captions {
+  position: relative;
+  left: 30vw;
+}
 .slider-input:checked + .slider-item {
   position: static;
   opacity: 100;
@@ -43,35 +47,39 @@ body {
 #input-1:checked ~ .flexbox .tex_for_input-1 {
   position: static;
   opacity: 100;
+  transform: translateX(-30vw);
+  transition: transform 1s ease-out;
 }
 #input-2:checked ~ .flexbox .tex_for_input-2 {
   position: static;
   opacity: 100;
+  transform: translateX(-30vw);
+  transition: transform 1s ease-out;
 }
 #input-3:checked ~ .flexbox .tex_for_input-3 {
   position: static;
   opacity: 100;
+  transform: translateX(-30vw);
+  transition: transform 1s ease-out;
 }
 #input-4:checked ~ .flexbox .tex_for_input-4{
   position: static;
   opacity: 100;
+  transform: translateX(-30vw);
+  transition: transform 1s ease-out;
 }
 
 #input-1:checked ~ .flexbox .circle1 {
-  color: rgb(63, 13, 202);
-  background-color: grey;
+  background-color: rgb(19, 22, 16);
 }
 #input-2:checked ~ .flexbox .circle2 {
-  color: rgb(63, 13, 202);
-  background-color: grey;
+  background-color: rgb(19, 22, 16);
 }
 #input-3:checked ~ .flexbox .circle3 {
-  color: rgb(63, 13, 202);
-  background-color: grey;
+  background-color: rgb(19, 22, 16);
 }
 #input-4:checked ~ .flexbox .circle4 {
-  color: rgb(63, 13, 202);
-  background-color: grey;
+  background-color: rgb(19, 22, 16);
 }
 
 .mem_pic {
@@ -98,6 +106,10 @@ body {
   color: white;
   background-color: white;
 }
+.bullet:active .circle {
+  color: grey;
+  background-color: grey;
+}
 /* .flexbox {
   display: flex;
   justify-content: space-between;
@@ -118,20 +130,38 @@ body {
 }
 .bottoms {
   display: flex;
-  width: 8%;
+  width: 7em;
   height: 2em;
   justify-content: space-between;
 }
 .text {
+  position: relative;
   margin: 0;
-  font-size: 2em;
+  font-size: 2rem;
   display: block;
   position: absolute;
   opacity: 0;
+  color: white;
 }
 label {
   display: block;
 }
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }}
+@media(max-width: 1024px){
+  .text {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .text {
+    font-size: 1.25rem;
+  }
+  .bottoms {
+    width: 5.25em;
+    height: 1.5em;
+  }
+  .circle {
+    height: 0.75em;
+    width: 0.75em;
+    border: solid .15em;
+  }
+}
