@@ -10,11 +10,11 @@ body {
   box-sizing: inherit;
 }
 .wrapper {
-  margin: 0;
+  margin: auto;
   padding-top: 1%;
   padding-bottom: 0;
   height: 100%;
-  width: auto;
+  max-width: 76vw;
   /* background-image: url('mister\ bean.jpg');
   background-repeat: no-repeat;
   background-size: cover; */
@@ -23,13 +23,14 @@ body {
   width: 100%;
 }
 .mem_pic {
-  height: 90%;
+  /* height: 80%; */
+  width: 100%;
   border-radius: .75em;
-  
+  object-fit: cover;
 }
 .circle {
-  height: .75em;
-  width: .75em;
+  height: 1em;
+  width: 1em;
   border-radius: 50%;
   color: aqua;
   background-color: aqua;
@@ -42,7 +43,7 @@ body {
 }
 .bottoms {
   display: flex;
-  width: 5%;
+  width: 8%;
   justify-content: space-between;
 }
 .text {
