@@ -136,7 +136,6 @@ body {
   margin-top: 4rem;
   width: 7em;
   height: 2em;
-  cursor: pointer;
   justify-content: space-between;
 }
 .text {
@@ -175,6 +174,9 @@ label {
   }
 }
 @media (max-width: 768px) {
+  label {
+    cursor: unset;
+  }
   .text {
     font-size: 1.25rem;
     line-height: 1.25rem;
