@@ -35,6 +35,7 @@ body {
 .picture_captions {
   position: relative;
   left: 30vw;
+  pointer-events: none;
 }
 .current_caption{
   height: 2rem;
