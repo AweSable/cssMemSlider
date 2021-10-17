@@ -1,0 +1,231 @@
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: rgb(19, 22, 16);
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+.wrapper {
+  position: relative;
+  margin: auto;
+  padding-top: 1%;
+  padding-bottom: 0;
+  height: 100%;
+  max-width: 76vw;
+  overflow: hidden;
+}
+.mem {
+  display: flex;
+  position: relative;
+  width: 304vw;
+  left: 0;
+  z-index: 1;
+}
+.slider-item {
+  position: relative;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  /* transition: left 5s ease-out; */
+  z-index: 1;
+}
+.picture_captions {
+  position: relative;
+  left: 30vw;
+  pointer-events: none;
+}
+.current_caption{
+  height: 2rem;
+  margin-top: 4rem;
+}
+#input-1:checked + .slider-item {
+  left: 0;
+  opacity: 100;
+}
+#input-2:checked + .slider-item {
+  left: -76vw;
+  opacity: 100;
+}
+#input-3:checked + .slider-item {
+  left: calc(-76vw * 2);
+  opacity: 100;
+}
+#input-4:checked + .slider-item {
+  left: calc(-76vw * 3);
+  opacity: 100;
+}
+#input-1:checked ~ .flexbox .tex_for_input-1 {
+  opacity: 100;
+  transform: translateX(-30vw);
+  transition: transform 1s ease-out;
+}
+#input-2:checked ~ .flexbox .tex_for_input-2 {
+  top: -2rem;
+  opacity: 100;
+  transform: translateX(-30vw);
+  transition: transform 1s ease-out;
+}
+#input-3:checked ~ .flexbox .tex_for_input-3 {
+  top: -4rem;
+  opacity: 100;
+  transform: translateX(-30vw);
+  transition: transform 1s ease-out;
+}
+#input-4:checked ~ .flexbox .tex_for_input-4{
+  top: -6rem;
+  opacity: 100;
+  transform: translateX(-30vw);
+  transition: transform 1s ease-out;
+}
+
+#input-1:checked ~ .flexbox .circle1 {
+  background-color: rgb(19, 22, 16);
+}
+#input-2:checked ~ .flexbox .circle2 {
+  background-color: rgb(19, 22, 16);
+}
+#input-3:checked ~ .flexbox .circle3 {
+  background-color: rgb(19, 22, 16);
+}
+#input-4:checked ~ .flexbox .circle4 {
+  background-color: rgb(19, 22, 16);
+}
+
+.mem_pic {
+  height: calc(76vw * 9 / 16);
+  width: 76vw;
+  border-radius: .75em;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.circle {
+  height: 1em;
+  width: 1em;
+  border: solid .2em;
+  border-radius: 50%;
+  color: rgb(63, 13, 202);
+  background-color: rgb(63, 13, 202);
+  z-index: 10;
+}
+.bullet:hover .circle {
+  color: white;
+  background-color: white;
+}
+.bullet:active .circle {
+  color: grey;
+  background-color: grey;
+}
+.flexbox {
+  position: fixed;
+  bottom: 0;
+  height: calc(100vh - 76vw * 9 / 16);
+  left: calc(100vw / 2 - 76vw / 2);
+  width: 76vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: bottoms;
+  /* padding-top: 2%; */
+}
+.bottoms {
+  display: flex;
+  margin-top: 4rem;
+  width: 7em;
+  height: 2em;
+  justify-content: space-between;
+}
+.text {
+  position: relative;
+  margin: 0;
+  font-size: 2rem;
+  line-height: 2rem;
+  display: block;
+  opacity: 0;
+  color: white;
+}
+label {
+  display: block;
+  cursor: pointer;
+}
+@media(max-width: 1024px){
+  .text {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .current_caption{
+    height: 1.5rem;
+    margin-top: 3rem;
+  }
+  .bottoms {
+    margin-top: 3rem;
+  }
+  #input-2:checked ~ .flexbox .tex_for_input-2 {
+    top: -1.5rem;
+  }
+  #input-3:checked ~ .flexbox .tex_for_input-3 {
+    top: -3rem;
+  }
+  #input-4:checked ~ .flexbox .tex_for_input-4{
+    top: -4.5rem;
+  }
+}
+@media (max-width: 768px) {
+  label {
+    cursor: unset;
+  }
+  .text {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+  }
+  .current_caption{
+    height: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .bottoms {
+    margin-top: 2.5rem;
+  }
+  #input-2:checked ~ .flexbox .tex_for_input-2 {
+    top: -1.25rem;
+  }
+  #input-3:checked ~ .flexbox .tex_for_input-3 {
+    top: -2.5rem;
+  }
+  #input-4:checked ~ .flexbox .tex_for_input-4{
+    top: -3.75rem;
+  }
+  .bottoms {
+    width: 5.25em;
+    height: 1.5em;
+  }
+  .circle {
+    height: 0.75em;
+    width: 0.75em;
+    border: solid .15em;
+  }
+}
+@media (max-width: 420px) {
+  .text {
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+  }
+  .current_caption{
+    height: 1.25rem;
+    margin-top: 1rem;
+  }
+  .bottoms {
+    margin-top: 1.25rem;
+    width: 5em;
+    height: 1.25em;
+    align-self: center;
+  }
+  .flexbox {
+    flex-direction: column-reverse;
+    justify-content: start;
+    height: 4.2rem;
+    top: calc(1% + 76vw * 9 / 16);
+  }
+}
