@@ -136,6 +136,7 @@ body {
   margin-top: 4rem;
   width: 7em;
   height: 2em;
+  cursor: pointer;
   justify-content: space-between;
 }
 .text {
@@ -149,6 +150,7 @@ body {
 }
 label {
   display: block;
+  cursor: pointer;
 }
 @media(max-width: 1024px){
   .text {
