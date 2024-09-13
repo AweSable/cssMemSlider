@@ -10,51 +10,46 @@ body {
   box-sizing: inherit;
 }
 .wrapper {
-  position: relative;
   margin: auto;
   padding-top: 1%;
   padding-bottom: 0;
-  height: 100%;
   max-width: 76vw;
   overflow: hidden;
 }
 .mem {
   display: flex;
-  position: relative;
   width: 304vw;
-  left: 0;
+  justify-content: start;
   z-index: 1;
 }
 .slider-item {
-  position: relative;
+  order: 1;
   opacity: 0;
   transition: opacity 1s ease-out;
   /* transition: left 5s ease-out; */
   z-index: 1;
 }
 .picture_captions {
-  position: relative;
-  left: 30vw;
+  transform: translateX(30vw);
   pointer-events: none;
 }
 .current_caption{
   height: 2rem;
-  margin-top: 4rem;
+  margin-top: calc(4rem - 1vw);
 }
-#input-1:checked + .slider-item {
-  left: 0;
+#input-1:checked ~ .mem .slider-item-1 {
   opacity: 100;
 }
-#input-2:checked + .slider-item {
-  left: -76vw;
+#input-2:checked ~ .mem .slider-item-2 {
+  order: 0;
   opacity: 100;
 }
-#input-3:checked + .slider-item {
-  left: calc(-76vw * 2);
+#input-3:checked ~ .mem .slider-item-3 {
+  order: 0;
   opacity: 100;
 }
-#input-4:checked + .slider-item {
-  left: calc(-76vw * 3);
+#input-4:checked ~ .mem .slider-item-4 {
+  order: 0;
   opacity: 100;
 }
 #input-1:checked ~ .flexbox .tex_for_input-1 {
@@ -63,19 +58,19 @@ body {
   transition: transform 1s ease-out;
 }
 #input-2:checked ~ .flexbox .tex_for_input-2 {
-  top: -2rem;
+  margin-top: -2rem;
   opacity: 100;
   transform: translateX(-30vw);
   transition: transform 1s ease-out;
 }
 #input-3:checked ~ .flexbox .tex_for_input-3 {
-  top: -4rem;
+  margin-top: -4rem;
   opacity: 100;
   transform: translateX(-30vw);
   transition: transform 1s ease-out;
 }
 #input-4:checked ~ .flexbox .tex_for_input-4{
-  top: -6rem;
+  margin-top: -6rem;
   opacity: 100;
   transform: translateX(-30vw);
   transition: transform 1s ease-out;
@@ -95,6 +90,7 @@ body {
 }
 
 .mem_pic {
+  display: block;
   height: calc(76vw * 9 / 16);
   width: 76vw;
   border-radius: .75em;
@@ -121,25 +117,20 @@ body {
   background-color: grey;
 }
 .flexbox {
-  position: fixed;
-  bottom: 0;
-  height: calc(100vh - 76vw * 9 / 16);
-  left: calc(100vw / 2 - 76vw / 2);
   width: 76vw;
   display: flex;
   justify-content: space-between;
-  align-items: bottoms;
   /* padding-top: 2%; */
 }
 .bottoms {
   display: flex;
-  margin-top: 4rem;
+  margin-top: calc(4rem - 1vw);
   width: 7em;
   height: 2em;
   justify-content: space-between;
+  align-items: center;
 }
 .text {
-  position: relative;
   margin: 0;
   font-size: 2rem;
   line-height: 2rem;
@@ -158,19 +149,19 @@ label {
   }
   .current_caption{
     height: 1.5rem;
-    margin-top: 3rem;
+    margin-top: calc(3rem - 1vw);
   }
   .bottoms {
-    margin-top: 3rem;
+    margin-top: calc(3rem - 1vw);
   }
   #input-2:checked ~ .flexbox .tex_for_input-2 {
-    top: -1.5rem;
+    margin-top: -1.5rem;
   }
   #input-3:checked ~ .flexbox .tex_for_input-3 {
-    top: -3rem;
+    margin-top: -3rem;
   }
   #input-4:checked ~ .flexbox .tex_for_input-4{
-    top: -4.5rem;
+    margin-top: -4.5rem;
   }
 }
 @media (max-width: 768px) {
@@ -183,23 +174,21 @@ label {
   }
   .current_caption{
     height: 1.25rem;
-    margin-top: 2.5rem;
+    margin-top: calc(2.5rem - 1vw);
   }
   .bottoms {
-    margin-top: 2.5rem;
-  }
-  #input-2:checked ~ .flexbox .tex_for_input-2 {
-    top: -1.25rem;
-  }
-  #input-3:checked ~ .flexbox .tex_for_input-3 {
-    top: -2.5rem;
-  }
-  #input-4:checked ~ .flexbox .tex_for_input-4{
-    top: -3.75rem;
-  }
-  .bottoms {
+    margin-top: calc(2.5rem - 1vw);
     width: 5.25em;
     height: 1.5em;
+  }
+  #input-2:checked ~ .flexbox .tex_for_input-2 {
+    margin-top: -1.25rem;
+  }
+  #input-3:checked ~ .flexbox .tex_for_input-3 {
+    margin-top: -2.5rem;
+  }
+  #input-4:checked ~ .flexbox .tex_for_input-4{
+    margin-top: -3.75rem;
   }
   .circle {
     height: 0.75em;
@@ -207,17 +196,17 @@ label {
     border: solid .15em;
   }
 }
-@media (max-width: 420px) {
+@media (max-width: 500px) {
   .text {
     font-size: 1.1rem;
     line-height: 1.1rem;
   }
   .current_caption{
     height: 1.25rem;
-    margin-top: 1rem;
+    margin-top: calc(1.25rem - 1vw);
   }
   .bottoms {
-    margin-top: 1.25rem;
+    margin-top: calc(1.25rem - 1vw);
     width: 5em;
     height: 1.25em;
     align-self: center;
@@ -225,7 +214,5 @@ label {
   .flexbox {
     flex-direction: column-reverse;
     justify-content: start;
-    height: 4.2rem;
-    top: calc(1% + 76vw * 9 / 16);
   }
 }
